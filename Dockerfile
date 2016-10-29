@@ -4,6 +4,9 @@ FROM node:argon
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
+# Update OS packages
+RUN apt-get update && apt-get upgrade
+
 # Install app dependencies
 RUN git clone https://github.com/acashley/dockertest/ /usr/src/app/
 RUN npm install
